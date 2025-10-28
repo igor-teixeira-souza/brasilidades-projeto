@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Brasilidades-Esportistas Ícones do Brasil</title>
+    <title>Brasilidades - Esportistas Ícones do Brasil</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -24,394 +24,254 @@
         <span class="icon">⚫</span>
       </button>
     </div>
+
     <a href="#main-content" class="skip-link"
       >Pular para o conteúdo principal</a
     >
+
     <header role="banner">
-      <div class="bg-header"></div>
-      <h1>Brasilidades</h1>
-      <nav aria-label="Menu principal">
-        <ul class="menu">
-          <li><a href="#historia-section">Cultura</a></li>
-          <li><a href="#idolos-section">Ídolos</a></li>
-          <li><a href="#inclusao-section">Inclusão</a></li>
-          <li><a href="#sobre-section">Sobre</a></li>
-        </ul>
-      </nav>
+      <div class="header-content">
+        <h1>Brasilidades</h1>
+        <nav aria-label="Menu principal">
+          <ul class="menu">
+            <li><a href="#historia-section">Cultura</a></li>
+            <li><a href="#idolos-section">Ídolos</a></li>
+            <li><a href="#inclusao-section">Inclusão</a></li>
+            <li><a href="#sobre-section">Sobre</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="main-content" role="main">
-      <section class="full-banner">
-        <div class="banner-image"></div>
-        <section class="hero">
+      <!-- HERO SECTION -->
+      <section class="hero-section" aria-label="Seção principal">
+        <div class="hero-content">
           <h1 class="hero-title">Esportistas Ícones do Brasil</h1>
           <p class="hero-desc">
             Onde a Paixão Encontra a História: Celebrando os Ícones que Moldaram
             a Identidade Esportiva do Brasil.
           </p>
-          <a href="#idolos-section" class="hero-btn">Saiba Mais</a>
-        </section>
+          <a href="#idolos-section" class="hero-btn">Conhecer os Ídolos</a>
+        </div>
+        <div class="hero-background"></div>
       </section>
 
       <!-- SEÇÃO HISTÓRIA E CULTURA -->
-      <section id="historia-section" class="historia-section fade-in-scroll">
-        <div class="historia-text">
-          <h2>O Esporte como Expressão da Cultura Brasileira</h2>
-          <p>
-            O esporte é parte essencial da identidade do Brasil. Do futebol nas
-            ruas às medalhas olímpicas, ele expressa nossa criatividade, alegria
-            e perseverança. A paixão pelos esportes une pessoas de todas as
-            regiões e origens, mostrando a força de um povo que nunca desiste.
-          </p>
-          <p>
-            Mais do que competição, o esporte no Brasil representa inclusão,
-            superação e inspiração. Nossos ídolos são símbolos da garra e do
-            talento que o mundo admira.
-          </p>
+      <section
+        id="historia-section"
+        class="historia-section fade-in-scroll"
+        aria-labelledby="historia-title"
+      >
+        <div class="container">
+          <div class="historia-content">
+            <div class="historia-text">
+              <h2 id="historia-title">
+                O Esporte como Expressão da Cultura Brasileira
+              </h2>
+              <p>
+                O esporte é parte essencial da identidade do Brasil. Do futebol
+                nas ruas às medalhas olímpicas, ele expressa nossa criatividade,
+                alegria e perseverança. A paixão pelos esportes une pessoas de
+                todas as regiões e origens, mostrando a força de um povo que
+                nunca desiste.
+              </p>
+              <p>
+                Mais do que competição, o esporte no Brasil representa inclusão,
+                superação e inspiração. Nossos ídolos são símbolos da garra e do
+                talento que o mundo admira.
+              </p>
+            </div>
+            <div class="historia-img" aria-hidden="true"></div>
+          </div>
         </div>
-        <div class="historia-img"></div>
+      </section>
+      <!-- SEÇÃO HISTÓRIA E CULTURA -->
+      <section
+        id="curiosidades-section"
+        class="curiosidades-section fade-in-scroll"
+        aria-labelledby="curiosidades-title"
+      >
+        <div class="container">
+          <div class="curiosidades-content">
+            <div class="curiosidades-text">
+              <h2 id="curiosidades-title">
+                O Toque de Ginga: O Brasil na Cultura dos Animes Esportivos
+              </h2>
+              <p>
+                Nos animes, o Brasil não é apenas um país, mas um símbolo de
+                excelência esportiva. Sua imagem está intrinsecamente ligada a
+                um estilo de jogo improvisado, criativo e alegre, uma "ginga"
+                que muitas vezes se opõe ao rigor tático e à disciplina dos
+                protagonistas japoneses. A cultura do "Joga Bonito" e a herança
+                de lendas como Pelé e Ronaldinho servem de pano de fundo para
+                essa representação.
+              </p>
+              <p>
+                Captain Tsubasa (Super Campeões): A obra-prima dos animes de
+                futebol. O protagonista, Tsubasa Ozora, passa sua infância
+                treinando no Brasil, onde absorve a essência do futebol de rua e
+                da "magia" brasileira. Enfrenta o gênio Carlos Santana, um dos
+                rivais mais marcantes da série.
+              </p>
+              <p>
+                Blue Lock: A representação mais recente e estilizada. O
+                personagem Lavinho é a personificação do "Estilo Ginga", usando
+                dribles desconcertantes que misturam futebol e dança,
+                representando a alegria e a imprevisibilidade do estilo
+                brasileiro.
+              </p>
+              <p>
+                Haikyuu!!: No universo do vôlei, o Brasil também é uma potência.
+                O ídolo brasileiro Olívier é uma lenda que inspira o carismático
+                Oikawa a se tornar um jogador de elite, mostrando que a
+                influência vai além do futebol.
+              </p>
+            </div>
+            <div class="curiosidades-img" aria-hidden="true"></div>
+          </div>
+        </div>
       </section>
 
       <!-- SEÇÃO ÍDOLOS -->
-      <div class="carrossel-container">
-        <button class="carrossel-btn prev" aria-label="Anterior">
-          &#10094;
-        </button>
-        <div class="carrossel-track" tabindex="0">
-          <!-- Repita os cards de atleta aqui -->
-          <div class="idolo-card">
-            <img src="img/atleta1.jpg" alt="Nome do Atleta 1" />
-            <h3>Pelé</h3>
-            <p>
-              Considerado o maior jogador de futebol de todos os tempos, Pelé
-              levou o Brasil ao topo do mundo e inspirou gerações.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Marta</h3>
-            <p>
-              Com recordes e títulos, Marta é um ícone mundial do futebol
-              feminino e símbolo de força feminina no esporte.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Ayrton Senna</h3>
-            <p>
-              Tricampeão mundial de Fórmula 1, Senna se tornou um símbolo de
-              determinação, coragem e amor ao Brasil.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Gabi Guimarães</h3>
-            <p>
-              Gabi Guimarães é destaque do vôlei brasileiro, reconhecida por sua
-              liderança, técnica apurada e conquistas pela seleção nacional.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Daniel Dias</h3>
-            <p>
-              Daniel Dias é o maior nadador paralímpico brasileiro, símbolo de
-              superação e inspiração com múltiplas medalhas mundiais e
-              olímpicas.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Petrúcio Ferreira</h3>
-            <p>
-              Petrúcio Ferreira é velocista paralímpico brasileiro, recordista
-              mundial e exemplo de determinação e velocidade nas pistas.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Ronaldo Fenômeno</h3>
-            <p>
-              Um dos maiores atacantes da história, bicampeão mundial e símbolo
-              de superação no futebol.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>André Brasil</h3>
-            <p>
-              Nadador paralímpico multicampeão, exemplo de força e inspiração no
-              esporte adaptado.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Anderson Silva</h3>
-            <p>
-              Lenda do MMA, ex-campeão do UFC e referência mundial em técnica e
-              determinação.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Falcão</h3>
-            <p>
-              Alessandro Rosa Vieira é um grade ídolo do futsal, conhecido por
-              sua habilidade, dribles e títulos pela seleção.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Daiane dos Santos</h3>
-            <p>
-              Ginasta pioneira, primeira brasileira campeã mundial e criadora do
-              salto “Dos Santos”.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Neymar</h3>
-            <p>
-              Craque do futebol moderno, destaque por sua criatividade, gols e
-              conquistas internacionais.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Gabriel Medina</h3>
-            <p>
-              Surfista bicampeão mundial, responsável por colocar o Brasil no
-              topo do surfe mundial.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img src="img/atleta2.jpg" alt="Nome do Atleta 2" />
-            <h3>Rayssa Leal</h3>
-            <p>
-              Jovem skatista medalhista olímpica, símbolo de carisma, talento e
-              renovação no esporte. Giba
-            </p>
+      <section
+        id="idolos-section"
+        class="idolos-section fade-in-scroll"
+        aria-labelledby="idolos-title"
+      >
+        <div class="container">
+          <h2 id="idolos-title">Ídolos que Marcaram o Brasil</h2>
+
+          <div
+            class="carrossel-container"
+            role="region"
+            aria-label="Carrossel de ídolos esportivos"
+          >
+            <button class="carrossel-btn prev" aria-label="Slide anterior">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div class="carrossel-track-container">
+              <div class="carrossel-track" tabindex="0">
+                <!-- Cards serão inseridos via JavaScript -->
+              </div>
+            </div>
+
+            <button class="carrossel-btn next" aria-label="Próximo slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="carrossel-indicators"
+              role="tablist"
+              aria-label="Selecionar slide"
+            >
+              <!-- Indicadores serão inseridos via JavaScript -->
+            </div>
           </div>
         </div>
-        <button class="carrossel-btn next" aria-label="Próximo">
-          &#10095;
-        </button>
-      </div>
-      <!--<section id="idolos-section" class="idolos-section fade-in-scroll">
-        <h2>Ídolos que Marcaram o Brasil</h2>
-        <div class="idolos-main">
-          <div class="idolo-card">
-            <img src="img/pele_b109b2f9f8.png" alt="Pelé - Rei do Futebol" />
-            <h3>Pelé</h3>
-            <p>
-              Considerado o maior jogador de futebol de todos os tempos, Pelé
-              levou o Brasil ao topo do mundo e inspirou gerações.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/Marta 12172024.jpg.png"
-              alt="Marta - Rainha do Futebol Feminino"
-            />
-            <h3>Marta</h3>
-            <p>
-              Com recordes e títulos, Marta é um ícone mundial do futebol feminino
-              e símbolo de força feminina no esporte.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/ayrton-senna-race-2880x1800-1909.png"
-              alt="Ayrton Senna - Lenda da Fórmula 1"
-            />
-            <h3>Ayrton Senna</h3>
-            <p>
-              Tricampeão mundial de Fórmula 1, Senna se tornou um símbolo de
-              determinação, coragem e amor ao Brasil.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/Foto_-FIBV-1-jpg.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Gabi Guimarães</h3>
-            <p>
-              Gabi Guimarães é destaque do vôlei brasileiro, reconhecida por sua
-              liderança, técnica apurada e conquistas pela seleção nacional.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/Daniel_Dias_100mlivre_Washington_Alves_1.jpg"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Daniel Dias</h3>
-            <p>
-              Daniel Dias é o maior nadador paralímpico brasileiro, símbolo de
-              superação e inspiração com múltiplas medalhas mundiais e olímpicas.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/padrao-folha_24.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Petrúcio Ferreira</h3>
-            <p>
-              Petrúcio Ferreira é velocista paralímpico brasileiro, recordista
-              mundial e exemplo de determinação e velocidade nas pistas.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/sportbuzz_10_MV3Up9g-1.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Ronaldo Fenômeno</h3>
-            <p>
-              Um dos maiores atacantes da história, bicampeão mundial e símbolo de superação no futebol.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/7896590046_016b98093d_o-scaled-e.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>André Brasil</h3>
-            <p>
-              Nadador paralímpico multicampeão, exemplo de força e inspiração no esporte adaptado.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/if-anderson-silva-retired-before.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Anderson Silva</h3>
-            <p>
-              Lenda do MMA, ex-campeão do UFC e referência mundial em técnica e determinação.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/falcao-futsal.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Falcão</h3>
-            <p>
-              (Alessandro Rosa Vieira) – Ídolo do futsal, conhecido por sua habilidade, dribles e títulos pela
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/411543694-4508128-daiane-dos-san.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Daiane dos Santos</h3>
-            <p>
-              Ginasta pioneira, primeira brasileira campeã mundial e criadora do salto “Dos Santos”.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/GettyImages-1446977379.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Neymar</h3>
-            <p>
-              Craque do futebol moderno, destaque por sua criatividade, gols e conquistas internacionais.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/gabriel-medina.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Gabriel Medina</h3>
-            <p>
-              Surfista bicampeão mundial, responsável por colocar o Brasil no topo do surfe mundial.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/Rayssa-Leal-Paris-4-scaled-aspec.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Rayssa Leal</h3>
-            <p>
-              Jovem skatista medalhista olímpica, símbolo de carisma, talento e renovação no esporte.
-            </p>
-          </div>
-          <div class="idolo-card">
-            <img
-              src="img/331e690fc6fbf7ee753a86dd6b11a245.png"
-              alt="Atletas Paralímpicos Brasileiros"
-            />
-            <h3>Giba</h3>
-            <p>
-              Um dos maiores nomes do vôlei mundial, líder da geração de ouro e campeão olímpico com o Brasil.
-            </p>
-          </div>
-      </section>-->
+      </section>
 
       <!-- SEÇÃO INCLUSÃO -->
-      <section id="inclusao-section" class="inclusao-section fade-in-scroll">
-        <div class="inclusao-content">
-          <h2>Inclusão e Diversidade no Esporte</h2>
-          <p>
-            O Brasil é referência mundial em inclusão esportiva. Projetos
-            sociais e iniciativas públicas têm revelado talentos em comunidades
-            carentes e oferecido oportunidades para pessoas com deficiência.
-          </p>
-          <p>
-            O esporte é um instrumento poderoso de transformação social — ele
-            derruba barreiras, incentiva o respeito e promove a igualdade.
-          </p>
+      <section
+        id="inclusao-section"
+        class="inclusao-section fade-in-scroll"
+        aria-labelledby="inclusao-title"
+      >
+        <div class="container">
+          <div class="inclusao-content">
+            <h2 id="inclusao-title">Inclusão e Diversidade no Esporte</h2>
+            <p>
+              O Brasil é referência mundial em inclusão esportiva. Projetos
+              sociais e iniciativas públicas têm revelado talentos em
+              comunidades carentes e oferecido oportunidades para pessoas com
+              deficiência.
+            </p>
+            <p>
+              O esporte é um instrumento poderoso de transformação social — ele
+              derruba barreiras, incentiva o respeito e promove a igualdade.
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- SEÇÃO SOBRE -->
-      <section id="sobre-section" class="sobre-section fade-in-scroll">
-        <div class="sobre-text">
-          <h2>Sobre o Projeto “Brasilidades”</h2>
-          <p>
-            Este site foi criado para celebrar o orgulho de ser brasileiro,
-            mostrando como nossos esportistas influenciam a cultura e inspiram
-            novas gerações. Aqui você encontra informações sobre atletas,
-            histórias e iniciativas que transformam o esporte em um símbolo de
-            união nacional.
-          </p>
-          <p>
-            Nosso objetivo é valorizar o que o Brasil tem de melhor: sua
-            diversidade, sua força e seu talento.
-          </p>
+      <section
+        id="sobre-section"
+        class="sobre-section fade-in-scroll"
+        aria-labelledby="sobre-title"
+      >
+        <div class="container">
+          <div class="sobre-content">
+            <div class="sobre-text">
+              <h2 id="sobre-title">Sobre o Projeto "Brasilidades"</h2>
+              <p>
+                Este site foi criado para celebrar o orgulho de ser brasileiro,
+                mostrando como nossos esportistas influenciam a cultura e
+                inspiram novas gerações. Aqui você encontra informações sobre
+                atletas, histórias e iniciativas que transformam o esporte em um
+                símbolo de união nacional.
+              </p>
+              <p>
+                Nosso objetivo é valorizar o que o Brasil tem de melhor: sua
+                diversidade, sua força e seu talento.
+              </p>
+            </div>
+            <div class="sobre-img" aria-hidden="true"></div>
+          </div>
         </div>
-        <div class="sobre-img"></div>
       </section>
     </main>
 
     <footer role="contentinfo">
-      &copy; 2025 Igor Teixeira Souza. Todos os direitos reservados.
+      <div class="container">
+        <p>&copy; 2025 Igor Teixeira Souza. Todos os direitos reservados.</p>
+        <p>
+          Projeto acadêmico - Desenvolvido com paixão pelo esporte brasileiro
+        </p>
+      </div>
     </footer>
 
     <!-- MODAL POP-UP -->
-    <div id="athlete-modal" class="modal">
-      <div class="modal-background"></div>
+    <div
+      id="athlete-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-athlete-name"
+      aria-hidden="true"
+    >
+      <div class="modal-background" tabindex="-1"></div>
       <div class="modal-content">
         <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title" id="modal-athlete-name">
               Nome do Atleta
             </p>
-            <button class="modal-close" aria-label="close"></button>
+            <button class="modal-close" aria-label="Fechar modal">×</button>
           </header>
           <section class="modal-card-body">
             <figure class="image-container">
               <img id="modal-athlete-image" src="" alt="Imagem do Atleta" />
             </figure>
             <div class="details-content">
-              <p id="modal-athlete-details">Detalhes do atleta.</p>
+              <div id="modal-athlete-details">Detalhes do atleta.</div>
             </div>
           </section>
         </div>
@@ -419,5 +279,21 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      // Polyfill para :focus-visible
+      (function () {
+        if (!("focusVisible" in document.documentElement)) {
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Tab") {
+              document.documentElement.classList.add("focus-visible");
+            }
+          });
+
+          document.addEventListener("mousedown", function () {
+            document.documentElement.classList.remove("focus-visible");
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
