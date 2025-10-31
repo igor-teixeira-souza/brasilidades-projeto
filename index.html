@@ -1,366 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brasilidades - Esportistas Ícones do Brasil</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
     <!-- Menu de Acessibilidade -->
-    <div class="accessibility-menu">
-      <button
-        id="toggle-dark-mode"
-        aria-label="Alternar Modo Escuro/Claro"
-        title="Modo Escuro/Claro"
-      >
-        <span class="icon">🌙</span>
-      </button>
-      <button
-        id="toggle-contrast"
-        aria-label="Alternar Alto Contraste"
-        title="Alto Contraste"
-      >
-        <span class="icon">⚫</span>
-      </button>
+    <div class="accessibility-menu" aria-label="Menu de acessibilidade">
+        <button id="toggle-contrast" aria-label="Alternar Alto Contraste" title="Alto Contraste" aria-pressed="false">
+            <span class="icon" aria-hidden="true">⚫</span>
+            <span class="sr-only">Alternar alto contraste</span>
+        </button>
+        <button id="increase-font" aria-label="Aumentar Tamanho da Fonte" title="Aumentar Fonte">
+            <span class="icon" aria-hidden="true">🔍+</span>
+            <span class="sr-only">Aumentar tamanho da fonte</span>
+        </button>
+        <button id="decrease-font" aria-label="Diminuir Tamanho da Fonte" title="Diminuir Fonte">
+            <span class="icon" aria-hidden="true">🔍-</span>
+            <span class="sr-only">Diminuir tamanho da fonte</span>
+        </button>
     </div>
 
-    <a href="#main-content" class="skip-link"
-      >Pular para o conteúdo principal</a
-    >
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
     <header role="banner">
-      <div class="header-content">
-        <h1>Brasilidades</h1>
-        <nav aria-label="Menu principal">
-          <ul class="menu">
-            <li><a href="#historia-section">Cultura</a></li>
-            <li><a href="#idolos-section">Ídolos</a></li>
-            <li><a href="#inclusao-section">Inclusão</a></li>
-            <li><a href="#sobre-section">Sobre</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="header-content">
+            <h1>Brasilidades</h1>
+            <nav aria-label="Menu principal">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+                <ul class="menu" id="main-menu">
+                    <li><a href="#historia-section">Cultura</a></li>
+                    <li><a href="#idolos-section">Ídolos</a></li>
+                    <li><a href="#curiosidades-section">Curiosidades</a></li>
+                    <li><a href="#inclusao-section">Inclusão</a></li>
+                    <li><a href="#sobre-section">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content" role="main">
-      <!-- HERO SECTION -->
-      <section class="hero-section" aria-label="Seção principal">
-        <div class="hero-content">
-          <h1 class="hero-title">Esportistas Ícones do Brasil</h1>
-          <p class="hero-desc">
-            Onde a Paixão Encontra a História: Celebrando os Ícones que Moldaram
-            a Identidade Esportiva do Brasil.
-          </p>
-          <a href="#idolos-section" class="hero-btn">Conhecer os Ídolos</a>
-        </div>
-        <div class="hero-background"></div>
-      </section>
-
-      <!-- SEÇÃO HISTÓRIA E CULTURA -->
-      <section
-        id="historia-section"
-        class="historia-section fade-in-scroll"
-        aria-labelledby="historia-title"
-      >
-        <div class="container">
-          <div class="historia-content">
-            <div class="historia-text">
-              <h2 id="historia-title">
-                O Esporte como Expressão da Cultura Brasileira
-              </h2>
-              <p>
-                O esporte é parte essencial da identidade do Brasil. Do futebol
-                nas ruas às medalhas olímpicas, ele expressa nossa criatividade,
-                alegria e perseverança. A paixão pelos esportes une pessoas de
-                todas as regiões e origens, mostrando a força de um povo que
-                nunca desiste.
-              </p>
-              <p>
-                Mais do que competição, o esporte no Brasil representa inclusão,
-                superação e inspiração. Nossos ídolos são símbolos da garra e do
-                talento que o mundo admira.
-              </p>
+        <!-- HERO SECTION -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">Esportistas Ícones do Brasil</h1>
+                <p class="hero-desc">
+                    Onde a Paixão Encontra a História: Celebrando os Ícones que Moldaram
+                    a Identidade Esportiva do Brasil.
+                </p>
+                <a href="#idolos-section" class="hero-btn">Conhecer os Ídolos</a>
             </div>
-            <div class="historia-img" aria-hidden="true"></div>
-          </div>
-        </div>
-      </section>
+            <div class="hero-background" aria-hidden="true"></div>
+        </section>
 
-      <!-- SEÇÃO ÍDOLOS -->
-      <section
-        id="idolos-section"
-        class="idolos-section fade-in-scroll"
-        aria-labelledby="idolos-title"
-      >
-        <div class="container">
-          <h2 id="idolos-title">Ídolos que Marcaram o Brasil</h2>
-
-          <div
-            class="carrossel-container"
-            role="region"
-            aria-label="Carrossel de ídolos esportivos"
-          >
-            <button class="carrossel-btn prev" aria-label="Slide anterior">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M15 18L9 12L15 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-
-            <div class="carrossel-track-container">
-              <div class="carrossel-track" tabindex="0">
-                <!-- Cards serão inseridos via JavaScript -->
-              </div>
+        <!-- SEÇÃO HISTÓRIA E CULTURA -->
+        <section id="historia-section" class="historia-section fade-in-scroll" aria-labelledby="historia-title">
+            <div class="container">
+                <div class="historia-content">
+                    <div class="historia-text">
+                        <h2 id="historia-title">O Esporte como Expressão da Cultura Brasileira</h2>
+                        <p>
+                            O esporte é parte essencial da identidade do Brasil. Do futebol
+                            nas ruas às medalhas olímpicas, ele expressa nossa criatividade,
+                            alegria e perseverança. A paixão pelos esportes une pessoas de
+                            todas as regiões e origens, mostrando a força de um povo que
+                            nunca desiste.
+                        </p>
+                        <p>
+                            Mais do que competição, o esporte no Brasil representa inclusão,
+                            superação e inspiração. Nossos ídolos são símbolos da garra e do
+                            talento que o mundo admira.
+                        </p>
+                    </div>
+                    <div class="historia-img" aria-hidden="true"></div>
+                </div>
             </div>
+        </section>
 
-            <button class="carrossel-btn next" aria-label="Próximo slide">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 18L15 12L9 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
+        <!-- SEÇÃO ÍDOLOS -->
+        <section id="idolos-section" class="idolos-section fade-in-scroll" aria-labelledby="idolos-title">
+            <div class="container">
+                <h2 id="idolos-title">Ídolos que Marcaram o Brasil</h2>
 
-            <div
-              class="carrossel-indicators"
-              role="tablist"
-              aria-label="Selecionar slide"
-            >
-              <!-- Indicadores serão inseridos via JavaScript -->
+                <!-- Barra de Pesquisa e Filtros -->
+                <div class="search-filter-container">
+                    <div class="search-bar">
+                        <label for="athlete-search" class="sr-only">Buscar atleta</label>
+                        <input type="text" id="athlete-search" placeholder="Buscar atleta..." aria-label="Buscar atletas por nome" aria-autocomplete="list" aria-controls="search-suggestions">
+                        <button id="clear-search" aria-label="Limpar busca">✕</button>
+                        <div id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Sugestões de atletas"></div>
+                    </div>
+                    <div class="filter-buttons" role="group" aria-label="Filtrar por esporte">
+                        <button class="filter-btn active" data-sport="all" aria-pressed="true">Todos</button>
+                        <button class="filter-btn" data-sport="futebol" aria-pressed="false">Futebol</button>
+                        <button class="filter-btn" data-sport="volei" aria-pressed="false">Vôlei</button>
+                        <button class="filter-btn" data-sport="outros" aria-pressed="false">Outros</button>
+                    </div>
+                </div>
+
+                <div class="carrossel-container" role="region" aria-label="Carrossel de ídolos esportivos" aria-roledescription="carousel">
+                    <button class="carrossel-btn prev" aria-label="Slide anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="carrossel-track-container">
+                        <div class="carrossel-track" tabindex="0" role="list" aria-live="polite">
+                            <!-- Cards serão inseridos via JavaScript -->
+                        </div>
+                    </div>
+
+                    <button class="carrossel-btn next" aria-label="Próximo slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="carrossel-indicators" role="tablist" aria-label="Selecionar slide">
+                        <!-- Indicadores serão inseridos via JavaScript -->
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SEÇÃO HISTÓRIA E CULTURA -->
-      <section
-        id="curiosidades-section"
-        class="curiosidades-section fade-in-scroll"
-        aria-labelledby="curiosidades-title"
-      >
-        <div class="container">
-          <div class="curiosidades-content">
-            <div class="curiosidades-img" aria-hidden="true"></div>
-            <div class="curiosidades-text">
-              <h2 id="curiosidades-title">
-                🤩 É BRASIL! A Ginga Que Invadiu os Animes de Esporte 🇧🇷⚽🏐
-              </h2>
-              <p>
-                Se tem paixão, talento e um toque de maluquice, tem que ter
-                brasileiro no meio! A nossa **Ginga** não é só um passo de
-                samba, é a nossa marca registrada no esporte, e ela está fazendo
-                a festa nos animes japoneses! Esquece a seriedade e se liga nos
-                craques que levam o nosso país para as quadras e campos da
-                animação.
-              </p>
+        <!-- SEÇÃO CURIOSIDADES -->
+        <section id="curiosidades-section" class="curiosidades-section fade-in-scroll" aria-labelledby="curiosidades-title">
+            <div class="container">
+                <div class="curiosidades-content">
+                    <div class="curiosidades-img" aria-hidden="true"></div>
+                    <div class="curiosidades-text">
+                        <h2 id="curiosidades-title">🤩 É BRASIL! A Ginga Que Invadiu os Animes de Esporte 🇧🇷⚽🏐</h2>
+                        <p>
+                            Se tem paixão, talento e um toque de maluquice, tem que ter
+                            brasileiro no meio! A nossa <strong>Ginga</strong> não é só um passo de
+                            samba, é a nossa marca registrada no esporte, e ela está fazendo
+                            a festa nos animes japoneses! Esquece a seriedade e se liga nos
+                            craques que levam o nosso país para as quadras e campos da
+                            animação.
+                        </p>
 
-              <h3>No Campo: Nosso Futebol-Arte Sem Filtro</h3>
+                        <h3>No Campo: Nosso Futebol-Arte Sem Filtro</h3>
+                        <div class="anime-grid" id="futebol-anime-grid">
+                            <!-- Cards de futebol serão inseridos via JavaScript -->
+                        </div>
 
-              <div class="character-list-container">
-                <div class="character-item">
-                  <img src="img/carlos-santana.png" alt="Carlos Santana" />
-                  <p>
-                    <strong>Carlos Santana (Captain Tsubasa):</strong> O cara é
-                    o "Cyborg do Futebol", e isso já diz tudo! Ele é aquele
-                    rival absurdamente talentoso que não pode faltar. Santana é
-                    a prova de que a técnica brasileira é de outro nível,
-                    deixando os japoneses de cabelo em pé.
-                  </p>
-                </div>
-                <div class="character-item">
-                  <img src="img/lavinho.png" alt="Lavinho" />
-                  <p>
-                    <strong>Lavinho (Blue Lock):</strong> Aqui a gente fala de
-                    lenda! Lavinho é um dos "Cinco Craques Mundiais" e o mentor
-                    que chega para ensinar aos novatos que o futebol é, antes de
-                    tudo, <strong>drible e liberdade</strong>. Ele é o
-                    embaixador do nosso jeito malandro de jogar.
-                  </p>
-                </div>
-                <div class="character-item">
-                  <img src="img/rodrigo.png" alt="Rodrigo" />
-                  <p>
-                    <strong>Rodrigo (Hungry Heart: Wild Striker):</strong>
-                    Aquele atacante que a gente adora torcer. O Rodrigo se muda
-                    do Brasil para brilhar lá fora, mostrando a nossa garra de
-                    correr atrás do sonho e sustentar a família com o que a
-                    gente faz de melhor: dar um show de bola!
-                  </p>
-                </div>
-                <div class="character-item">
-                  <img src="img/falcao-da-silva.png" alt="Falcão da Silva" />
-                  <p>
-                    <strong>Falcão da Silva (Inazuma Eleven):</strong> Se tem
-                    Copa, tem Brasil! Falcão comanda a Seleção Brasileira (O
-                    Reino) com muito carisma. Ele é a cara da alegria e da força
-                    de equipe, usando técnicas que só podiam ser brasileiras!
-                  </p>
-                </div>
-                <div class="character-item">
-                  <img src="img/arthur-ie-orion.png" alt="Arthur IE Orion" />
-                  <p>
-                    <strong>Arthur IE Orion (Inazuma Eleven):</strong> Outro
-                    craque de "O Reino"! Arthur representa o talento e a paixão
-                    brasileira em campo, sempre com um toque de ginga que
-                    confunde os adversários. Ele e Falcão são a dupla que bota
-                    fogo no jogão!
-                  </p>
-                </div>
-                <div class="character-item">
-                  <img src="img/pele.png" alt="Pelé" />
-                  <p>
-                    <strong>Pelé (Blue Lock):</strong> Ele não aparece para
-                    jogar (poxa!), mas é a nossa carta na manga. Quando falam em
-                    gênio do futebol, o nome dele salta. O Pelé é a referência
-                    que prova que o Brasil é o ponto de partida para a
-                    excelência e a fantasia no futebol.
-                  </p>
-                </div>
-              </div>
+                        <h3>Na Quadra: Ginga Aérea e Areia Quente</h3>
+                        <div class="anime-grid" id="volei-anime-grid">
+                            <!-- Cards de vôlei serão inseridos via JavaScript -->
+                        </div>
 
-              <h3>Na Quadra: Ginga Aérea e Areia Quente</h3>
-
-              <div class="character-list-container">
-                <div class="character-item">
-                  <img src="img/nicollas-romero.png" alt="Nicollas Romero" />
-                  <p>
-                    <strong>Nicollas Romero (Haikyuu!!):</strong> Nosso
-                    representante no vôlei! Romero é o cara que treina nas
-                    praias, mostrando que a nossa "ginga" serve até para saltar
-                    e defender. Ele é o espelho do profissionalismo e do alto
-                    nível do vôlei brasileiro que inspira até os melhores do
-                    Japão.
-                  </p>
+                        <p class="curiosidades-conclusion">
+                            A moral da história é: se os animes precisam de emoção,
+                            habilidade e um jeito único de jogar, eles chamam o Brasil.
+                            Afinal, a nossa paixão pelo esporte é um golpe especial que não
+                            tem pra ninguém!
+                        </p>
+                    </div>
                 </div>
-              </div>
-
-              <p>
-                A moral da história é: se os animes precisam de emoção,
-                habilidade e um jeito único de jogar, eles chamam o Brasil.
-                Afinal, a nossa paixão pelo esporte é um golpe especial que não
-                tem pra ninguém!
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SEÇÃO INCLUSÃO -->
-      <section
-        id="inclusao-section"
-        class="inclusao-section fade-in-scroll"
-        aria-labelledby="inclusao-title"
-      >
-        <div class="container">
-          <div class="inclusao-content">
-            <h2 id="inclusao-title">Inclusão e Diversidade no Esporte</h2>
-            <p>
-              O Brasil é referência mundial em inclusão esportiva. Projetos
-              sociais e iniciativas públicas têm revelado talentos em
-              comunidades carentes e oferecido oportunidades para pessoas com
-              deficiência.
-            </p>
-            <p>
-              O esporte é um instrumento poderoso de transformação social — ele
-              derruba barreiras, incentiva o respeito e promove a igualdade.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEÇÃO SOBRE -->
-      <section
-        id="sobre-section"
-        class="sobre-section fade-in-scroll"
-        aria-labelledby="sobre-title"
-      >
-        <div class="container">
-          <div class="sobre-content">
-            <div class="sobre-text">
-              <h2 id="sobre-title">Sobre o Projeto "Brasilidades"</h2>
-              <p>
-                Este site foi criado para celebrar o orgulho de ser brasileiro,
-                mostrando como nossos esportistas influenciam a cultura e
-                inspiram novas gerações. Aqui você encontra informações sobre
-                atletas, histórias e iniciativas que transformam o esporte em um
-                símbolo de união nacional.
-              </p>
-              <p>
-                Nosso objetivo é valorizar o que o Brasil tem de melhor: sua
-                diversidade, sua força e seu talento.
-              </p>
+        <!-- SEÇÃO INCLUSÃO -->
+        <section id="inclusao-section" class="inclusao-section fade-in-scroll" aria-labelledby="inclusao-title">
+            <div class="container">
+                <div class="inclusao-content">
+                    <h2 id="inclusao-title">Inclusão e Diversidade no Esporte</h2>
+                    <p>
+                        O Brasil é referência mundial em inclusão esportiva. Projetos
+                        sociais e iniciativas públicas têm revelado talentos em
+                        comunidades carentes e oferecido oportunidades para pessoas com
+                        deficiência.
+                    </p>
+                    <p>
+                        O esporte é um instrumento poderoso de transformação social — ele
+                        derruba barreiras, incentiva o respeito e promove a igualdade.
+                    </p>
+                </div>
             </div>
-            <div class="sobre-img" aria-hidden="true"></div>
-          </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre-section" class="sobre-section fade-in-scroll" aria-labelledby="sobre-title">
+            <div class="container">
+                <div class="sobre-content">
+                    <div class="sobre-text">
+                        <h2 id="sobre-title">Sobre o Projeto "Brasilidades"</h2>
+                        <p>
+                            Este site foi criado para celebrar o orgulho de ser brasileiro,
+                            mostrando como nossos esportistas influenciam a cultura e
+                            inspiram novas gerações. Aqui você encontra informações sobre
+                            atletas, histórias e iniciativas que transformam o esporte em um
+                            símbolo de união nacional.
+                        </p>
+                        <p>
+                            Nosso objetivo é valorizar o que o Brasil tem de melhor: sua
+                            diversidade, sua força e seu talento.
+                        </p>
+                    </div>
+                    <div class="sobre-img" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" aria-label="Voltar ao topo da página" title="Voltar ao Topo">↑</button>
+
     <footer role="contentinfo">
-      <div class="container">
-        <p>&copy; 2025 Igor Teixeira Souza. Todos os direitos reservados.</p>
-        <p>
-          Projeto acadêmico - Desenvolvido com paixão pelo esporte brasileiro
-        </p>
-      </div>
+        <div class="container">
+            <p>&copy; 2025 Igor Teixeira Souza. Todos os direitos reservados.</p>
+            <p>Projeto acadêmico - Desenvolvido com paixão pelo esporte brasileiro</p>
+        </div>
     </footer>
 
-    <!-- MODAL POP-UP -->
-    <div
-      id="athlete-modal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-athlete-name"
-      aria-hidden="true"
-    >
-      <div class="modal-background" tabindex="-1"></div>
-      <div class="modal-content">
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title" id="modal-athlete-name">
-              Nome do Atleta
-            </p>
-            <button class="modal-close" aria-label="Fechar modal">×</button>
-          </header>
-          <section class="modal-card-body">
-            <figure class="image-container">
-              <img id="modal-athlete-image" src="" alt="Imagem do Atleta" />
-            </figure>
-            <div class="details-content">
-              <div id="modal-athlete-details">Detalhes do atleta.</div>
+    <!-- MODAL ATLETA -->
+    <div id="athlete-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-athlete-name" aria-hidden="true">
+        <div class="modal-background" tabindex="-1"></div>
+        <div class="modal-content">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title" id="modal-athlete-name">Nome do Atleta</p>
+                    <button class="modal-close" aria-label="Fechar modal">×</button>
+                </header>
+                <section class="modal-card-body">
+                    <figure class="image-container">
+                        <img id="modal-athlete-image" src="" alt="Imagem do Atleta">
+                    </figure>
+                    <div class="details-content">
+                        <div id="modal-athlete-details">Detalhes do atleta.</div>
+                    </div>
+                </section>
             </div>
-          </section>
         </div>
-      </div>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-      // Polyfill para :focus-visible
-      (function () {
-        if (!("focusVisible" in document.documentElement)) {
-          document.addEventListener("keydown", function (e) {
-            if (e.key === "Tab") {
-              document.documentElement.classList.add("focus-visible");
-            }
-          });
+    <!-- MODAL INSTRUÇÕES -->
+    <div id="instructions-modal" class="modal instructions-modal" role="dialog" aria-modal="true" aria-labelledby="instructions-title" aria-hidden="true">
+        <div class="modal-background" tabindex="-1"></div>
+        <div class="modal-content instructions-content">
+            <div class="modal-card instructions-card">
+                <header class="modal-card-head instructions-header">
+                    <h2 id="instructions-title" class="modal-card-title">🎮 Como Navegar no Site</h2>
+                    <button class="modal-close" aria-label="Fechar instruções">×</button>
+                </header>
+                <section class="modal-card-body instructions-body">
+                    <div class="instructions-section">
+                        <h3>🔄 Navegação por Teclado</h3>
+                        <div class="shortcut-grid">
+                            <div class="shortcut-item">
+                                <kbd>Tab</kbd>
+                                <span>Navegar entre elementos</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Shift + Tab</kbd>
+                                <span>Voltar ao elemento anterior</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Enter / Espaço</kbd>
+                                <span>Ativar elemento selecionado</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Setas ← →</kbd>
+                                <span>Navegar no carrossel</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Alt + 1</kbd>
+                                <span>Ir para o menu principal</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Alt + 2</kbd>
+                                <span>Voltar ao topo</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Esc</kbd>
+                                <span>Fechar modais e sugestões</span>
+                            </div>
+                        </div>
+                    </div>
 
-          document.addEventListener("mousedown", function () {
-            document.documentElement.classList.remove("focus-visible");
-          });
-        }
-      })();
-    </script>
-  </body>
+                    <div class="instructions-section">
+                        <h3>🔍 Barra de Pesquisa</h3>
+                        <ul class="instructions-list">
+                            <li>Digite o nome de um atleta para buscar</li>
+                            <li>Use <kbd>↑</kbd> e <kbd>↓</kbd> para navegar nas sugestões</li>
+                            <li>Pressione <kbd>Enter</kbd> para selecionar uma sugestão</li>
+                            <li>O carrossel irá automaticamente para o atleta selecionado</li>
+                        </ul>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>🎯 Carrossel de Ídolos</h3>
+                        <ul class="instructions-list">
+                            <li>Clique nos botões laterais ou use as setas do teclado</li>
+                            <li>Clique nos indicadores para ir direto a um atleta</li>
+                            <li>Clique em qualquer card para ver detalhes completos</li>
+                            <li>Use os filtros para ver atletas por esporte</li>
+                        </ul>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>♿ Recursos de Acessibilidade</h3>
+                        <ul class="instructions-list">
+                            <li>Menu flutuante à direita para alto contraste e tamanho de fonte</li>
+                            <li>Suporte completo a leitores de tela</li>
+                            <li>Navegação por teclado em todos os elementos</li>
+                            <li>Texto alternativo em todas as imagens</li>
+                            <li>Controles de redução de movimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="instructions-actions">
+                        <button id="dont-show-again" class="btn-secondary" aria-label="Não mostrar novamente">
+                            <span class="checkbox">☐</span>
+                            Não mostrar novamente
+                        </button>
+                        <button id="close-instructions" class="btn-primary">Entendi, vamos lá!</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE DE AJUDA -->
+    <button id="help-button" class="help-button" aria-label="Abrir instruções de navegação" title="Precisa de ajuda?">
+        <span class="help-icon">?</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
 </html>

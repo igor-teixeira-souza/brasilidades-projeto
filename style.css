@@ -13,6 +13,13 @@
   --radius: 8px;
   --radius-lg: 16px;
   --transition: all 0.3s ease;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
 }
 
 * {
@@ -23,7 +30,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -41,6 +48,18 @@ body {
 }
 
 /* ======== ACESSIBILIDADE ======== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -98,11 +117,7 @@ body {
 
 /* ======== HEADER ======== */
 header {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-green) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
   color: var(--white);
   padding: 1.5rem 0;
   position: sticky;
@@ -121,9 +136,40 @@ header {
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-3xl);
   font-weight: 800;
   letter-spacing: 1px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  height: 3px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .menu {
@@ -173,12 +219,7 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-green) 50%,
-    var(--primary-yellow) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 50%, var(--primary-yellow) 100%);
   overflow: hidden;
 }
 
@@ -188,8 +229,8 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/hero-bg.jpg") center/cover no-repeat;
-  opacity: 0.2;
+  background: linear-gradient(45deg, rgba(0, 39, 118, 0.8), rgba(0, 151, 57, 0.8));
+  opacity: 0.9;
 }
 
 .hero-content {
@@ -202,7 +243,7 @@ header h1 {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: var(--font-size-5xl);
   font-weight: 900;
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -210,7 +251,7 @@ header h1 {
 }
 
 .hero-desc {
-  font-size: 1.4rem;
+  font-size: var(--font-size-xl);
   margin-bottom: 2.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
@@ -224,7 +265,7 @@ header h1 {
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   transition: var(--transition);
   border: 2px solid transparent;
 }
@@ -253,157 +294,446 @@ header h1 {
 
 .historia-text h2 {
   color: var(--primary-blue);
-  font-size: 2.5rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 1.5rem;
   line-height: 1.3;
 }
 
 .historia-text p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   color: var(--black);
   margin-bottom: 1.5rem;
   line-height: 1.8;
 }
 
 .historia-img {
-  height: 500px;
-  background: url("../img/Colagem_medalhistas_de_ouro.png") center/cover
-    no-repeat;
+  height: 400px;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .historia-img:hover {
   transform: scale(1.02);
 }
-/* ======== SEÇÃO CURIOSIDADES - ANIMES ======== */
+
+/* ======== SEÇÃO CURIOSIDADES ======== */
 .curiosidades-section {
   padding: 5rem 0;
-  background: var(--white); /* MUDADO de gray-light para alternar com a seção de ídolos */
+  background: var(--white);
 }
 
-/* AJUSTE CRUCIAL: Mudei de flex-column para grid, alinhando esta seção com o layout das seções "História" e "Sobre" */
 .curiosidades-content {
-  display: flex;
-  flex-direction: column;
-  grid-template-columns: 1fr 1.5fr; /* Imagem (1fr) e Texto (1.5fr - mais espaço) */
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
-  align-items: center; /* Alinha verticalmente a imagem e o bloco de texto */
+  align-items: start;
 }
 
 .curiosidades-text h2 {
   color: var(--primary-blue);
-  font-size: 2.5rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 1.5rem;
   line-height: 1.3;
 }
 
 .curiosidades-text h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-2xl);
   color: var(--primary-green);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .curiosidades-text p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   color: var(--black);
   margin-bottom: 1.5rem;
   line-height: 1.8;
 }
 
 .curiosidades-img {
-  height: 600px;
-  background: url("/img/A ginga brasileira nos animes.png") center/cover
-    no-repeat;
+  height: 500px;
+  background: linear-gradient(45deg, var(--primary-green), var(--primary-yellow));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .curiosidades-img:hover {
   transform: scale(1.02);
 }
 
-/* --- Início: NOVOS Estilos para Lista de Personagens --- */
-
-/* REMOVIDO o container de colunas */
-/* .character-columns-container { ... } */
-/* REMOVIDO o estilo de coluna */
-/* .character-columns-container .column { ... } */
-
-/* ADICIONADO: Container da lista de personagens */
-.character-list-container {
-  display: flex;
-  flex-direction: column; /* Empilha os itens verticalmente */
-  gap: 1.5rem; /* Espaçamento entre os personagens */
-  margin-top: 2rem;
-  margin-bottom: 2rem; /* Espaço antes do próximo título (Na Quadra) */
+.curiosidades-conclusion {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-yellow), transparent);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-green);
 }
 
-/* MANTIDO: Este é o item de personagem (div própria com imagem + texto) */
-.character-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; /* Alinha imagem e texto no topo */
-  gap: 1rem; /* Espaço entre a imagem e o texto */
-  background: var(--gray-light); /* Cor de fundo para destacar */
-  padding: 1rem;
-  border-radius: var(--radius);
+/* ======== CARDS DE ANIME ======== */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.anime-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  height: 300px; /* Altura automática para ajustar ao conteúdo */
-
+  border: 2px solid transparent;
+  position: relative;
 }
 
-.character-item:hover {
-  transform: translateY(-5px);
+.anime-card:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--primary-yellow);
 }
 
-.character-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  flex-shrink: 0; /* Impede que a imagem encolha */
+.anime-card-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 600;
 }
 
-.character-item p {
-  margin: 0;
+.anime-card-image {
+  width: 100%;
   height: 100%;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--black);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* Deixei o nome do personagem em negrito para destacar */
-.character-item p strong {
-  color: var(--primary-blue);
-  font-size: 1.05rem;
-  display: block;
-  margin-bottom: 0.5rem;
+.anime-card:hover .anime-card-image {
+  transform: scale(1.05);
 }
-/* --- Fim: NOVOS Estilos para Lista de Personagens --- */
+
+.anime-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.anime-card-content {
+  padding: 1.5rem;
+}
+
+.anime-card-title {
+  color: var(--primary-blue);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.anime-card-subtitle {
+  color: var(--primary-green);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.anime-card-description {
+  color: var(--black);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.anime-card-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--gray-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.anime-card-abilities {
+  margin-bottom: 1.5rem;
+}
+
+.abilities-title {
+  font-size: 1rem;
+  color: var(--primary-green);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.abilities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ability-tag {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: var(--white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.ability-tag:hover {
+  transform: scale(1.05);
+}
+
+.anime-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-medium);
+}
+
+.anime-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-yellow);
+  font-weight: 600;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.rating-star {
+  color: var(--primary-yellow);
+  font-size: 1rem;
+}
+
+.anime-source {
+  color: var(--gray-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 
 /* ======== SEÇÃO ÍDOLOS ======== */
 .idolos-section {
   padding: 5rem 0;
-  background: var(--white);
+  background: var(--gray-light);
 }
 
 .idolos-section h2 {
   text-align: center;
   color: var(--primary-green);
-  font-size: 2.5rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 3rem;
+}
+
+/* Barra de pesquisa e filtros */
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1.5rem;
+  border: 2px solid var(--gray-medium);
+  border-radius: var(--radius);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 39, 118, 0.1);
+}
+
+#clear-search {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--gray-dark);
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+#clear-search:hover,
+#clear-search:focus {
+  background: var(--gray-medium);
+  color: var(--black);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-blue);
+  background: var(--white);
+  color: var(--primary-blue);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.filter-btn.active,
+.filter-btn:hover,
+.filter-btn:focus {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+
+/* ======== SUGESTÕES DE PESQUISA ======== */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-medium);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-lg);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.search-suggestions.active {
+  display: block;
+}
+
+.search-suggestion {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--gray-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-suggestion:last-child {
+  border-bottom: none;
+}
+
+.search-suggestion:hover,
+.search-suggestion:focus,
+.search-suggestion.highlighted {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+
+.search-suggestion img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.search-suggestion .suggestion-name {
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.search-suggestion .suggestion-sport {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+}
+
+.search-suggestion:hover .suggestion-sport,
+.search-suggestion:focus .suggestion-sport,
+.search-suggestion.highlighted .suggestion-sport {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* ======== CARROSSEL ======== */
 .carrossel-container {
   position: relative;
-  max-width: 1400px; /* Aumentado de 1200px */
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -417,14 +747,14 @@ header h1 {
 .carrossel-track {
   display: flex;
   transition: transform 0.5s ease;
-  gap: 2.5rem; /* Reduzido ligeiramente para caber mais cards */
+  gap: 2.5rem;
   padding: 2rem;
   height: 100%;
   align-items: center;
 }
 
 .idolo-card {
-  flex: 0 0 380px; /* Ajustado para caber mais cards */
+  flex: 0 0 380px;
   height: 500px;
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -443,16 +773,17 @@ header h1 {
 }
 
 .idolo-card:hover {
-  transform: translateY(-12px) scale(1.02); /* Efeito mais pronunciado */
+  transform: translateY(-12px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .idolo-card img {
   width: 100%;
-  height: 320px; /* Aumentado de 240px */
+  height: 320px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
 }
 
 .idolo-card:hover img {
@@ -460,8 +791,8 @@ header h1 {
 }
 
 .idolo-card-content {
-  padding: 2rem; /* Aumentado de 1.5rem */
-  height: 180px; /* Altura fixa para o conteúdo */
+  padding: 2rem;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -473,15 +804,9 @@ header h1 {
 }
 
 @keyframes cardHighlight {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .idolo-card.active {
@@ -490,7 +815,7 @@ header h1 {
 
 .idolo-card h3 {
   color: var(--primary-blue);
-  font-size: 1.6rem; /* Aumentado de 1.4rem */
+  font-size: var(--font-size-2xl);
   margin-bottom: 1rem;
   font-weight: 700;
   line-height: 1.3;
@@ -499,7 +824,7 @@ header h1 {
 .idolo-card p {
   color: var(--gray-dark);
   line-height: 1.6;
-  font-size: 1.05rem; /* Aumentado de 0.95rem */
+  font-size: var(--font-size-base);
   margin: 0;
 }
 
@@ -510,8 +835,8 @@ header h1 {
   background: var(--primary-blue);
   color: var(--white);
   border: none;
-  width: 60px; /* Aumentado de 50px */
-  height: 60px; /* Aumentado de 50px */
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
   transition: var(--transition);
@@ -526,28 +851,28 @@ header h1 {
 .carrossel-btn:focus {
   background: var(--primary-yellow);
   color: var(--primary-blue);
-  transform: translateY(-50%) scale(1.15); /* Efeito maior */
+  transform: translateY(-50%) scale(1.15);
 }
 
 .carrossel-btn.prev {
-  left: 2rem; /* Aumentado de 1rem */
+  left: 2rem;
 }
 
 .carrossel-btn.next {
-  right: 2rem; /* Aumentado de 1rem */
+  right: 2rem;
 }
 
 .carrossel-btn svg {
-  width: 28px; /* Aumentado de 24px */
-  height: 28px; /* Aumentado de 24px */
+  width: 28px;
+  height: 28px;
 }
 
 .carrossel-indicators {
   display: flex;
   justify-content: center;
-  gap: 0.5rem; /* Reduzido gap para muitos indicadores */
+  gap: 0.5rem;
   margin-top: 3rem;
-  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  flex-wrap: wrap;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -567,17 +892,13 @@ header h1 {
 .carrossel-indicator.active,
 .carrossel-indicator:hover {
   background: var(--primary-blue);
-  transform: scale(1.3); /* Aumentado de 1.2 */
+  transform: scale(1.3);
 }
 
 /* ======== SEÇÃO INCLUSÃO ======== */
 .inclusao-section {
   padding: 5rem 0;
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-green) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
   color: var(--white);
   text-align: center;
 }
@@ -588,13 +909,13 @@ header h1 {
 }
 
 .inclusao-content h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 2rem;
   color: var(--primary-yellow);
 }
 
 .inclusao-content p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xl);
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -614,23 +935,29 @@ header h1 {
 
 .sobre-text h2 {
   color: var(--primary-blue);
-  font-size: 2.5rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 1.5rem;
 }
 
 .sobre-text p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--black);
 }
 
 .sobre-img {
-  height: 500px;
-  background: url("../img/Pele.png") center/cover no-repeat;
+  height: 400px;
+  background: linear-gradient(45deg, var(--primary-yellow), var(--primary-green));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .sobre-img:hover {
@@ -682,16 +1009,12 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-green) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
   color: var(--white);
 }
 
 .modal-card-title {
-  font-size: 2rem;
+  font-size: var(--font-size-3xl);
   font-weight: 700;
 }
 
@@ -734,8 +1057,10 @@ header h1 {
 
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
   display: block;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
 }
 
 .details-content {
@@ -751,6 +1076,220 @@ header h1 {
 .modal-detail-item:last-child {
   border-bottom: none;
   margin-bottom: 0;
+}
+
+/* ======== POP-UP DE INSTRUÇÕES ======== */
+.instructions-modal .modal-content {
+  max-width: 800px;
+}
+
+.instructions-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.instructions-header {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.instructions-header .modal-card-title {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--white);
+}
+
+.instructions-body {
+  padding: 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.instructions-section {
+  margin-bottom: 2.5rem;
+}
+
+.instructions-section h3 {
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.shortcut-item:hover {
+  background: var(--gray-medium);
+  transform: translateX(5px);
+}
+
+.shortcut-item kbd {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-family: monospace;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+  display: inline-block;
+}
+
+.instructions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-medium);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.instructions-list li:before {
+  content: "✓";
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.instructions-list li:last-child {
+  border-bottom: none;
+}
+
+.instructions-list kbd {
+  background: var(--gray-medium);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  border: 1px solid var(--gray-dark);
+}
+
+.instructions-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 2px solid var(--gray-medium);
+  gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--gray-light);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background: var(--gray-medium);
+}
+
+.btn-secondary.checked .checkbox {
+  content: "☑";
+}
+
+.help-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.help-button:hover, .help-button:focus {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ======== BOTÃO VOLTAR AO TOPO ======== */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: none;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#back-to-top:hover,
+#back-to-top:focus {
+  background: var(--primary-yellow);
+  color: var(--primary-blue);
+  transform: scale(1.1);
+}
+
+#back-to-top.show {
+  display: flex;
 }
 
 /* ======== FOOTER ======== */
@@ -781,23 +1320,29 @@ footer p {
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: var(--font-size-4xl);
   }
 
   .historia-content,
-  .sobre-content {
+  .sobre-content,
+  .curiosidades-content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .historia-img,
-  .sobre-img {
-    height: 400px;
+  .sobre-img,
+  .curiosidades-img {
+    height: 300px;
     order: -1;
   }
 
   .modal-card-body {
     grid-template-columns: 1fr;
+  }
+
+  .carrossel-track-container {
+    margin: 0 4rem;
   }
 }
 
@@ -812,31 +1357,46 @@ footer p {
     text-align: center;
   }
 
+  .menu-toggle {
+    display: flex;
+  }
+
   .menu {
+    display: none;
+    flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .menu.active {
+    display: flex;
   }
 
   .menu a {
     padding: 0.5rem 1rem;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-3xl);
   }
 
   .hero-desc {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
   }
 
   .historia-text h2,
   .idolos-section h2,
   .inclusao-content h2,
-  .sobre-text h2 {
-    font-size: 2rem;
+  .sobre-text h2,
+  .curiosidades-text h2 {
+    font-size: var(--font-size-3xl);
   }
 
   .carrossel-track-container {
-    margin: 0 3rem;
+    margin: 0 2rem;
+    height: 500px;
   }
 
   .carrossel-btn {
@@ -851,51 +1411,89 @@ footer p {
   .carrossel-btn.next {
     right: 0.5rem;
   }
+
+  .idolo-card {
+    flex: 0 0 300px;
+    height: 450px;
+  }
+
+  .anime-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-filter-container {
+    gap: 1rem;
+  }
+
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-base);
+  }
+
+  .instructions-body {
+    padding: 1.5rem;
+  }
+  
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .instructions-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .help-button {
+    bottom: 1rem;
+    left: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
   }
 
   .hero-desc {
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
   }
 
   .carrossel-track-container {
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
 
   .idolo-card {
     flex: 0 0 280px;
   }
+
+  .accessibility-menu {
+    flex-direction: row;
+    top: auto;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
 }
 
 /* ======== MODOS DE ACESSIBILIDADE ======== */
-body.dark-mode {
-  background: #121212;
-  color: #f5f5f5;
-}
-
-body.dark-mode .historia-section,
-body.dark-mode .sobre-section {
-  background: #1e1e1e;
-}
-
-body.dark-mode .idolo-card {
-  background: #2d2d2d;
-  color: #f5f5f5;
-}
-
-body.dark-mode .idolo-card h3 {
-  color: var(--primary-yellow);
-}
-
-body.dark-mode .idolo-card p {
-  color: #cccccc;
-}
-
 body.high-contrast {
+  --primary-blue: #000080;
+  --primary-green: #008000;
+  --primary-yellow: #ffff00;
+  --black: #000000;
+  --white: #ffffff;
   filter: contrast(1.5) brightness(1.2);
 }
 
@@ -903,15 +1501,32 @@ body.high-contrast * {
   border-color: currentColor !important;
 }
 
-/* ======== MELHORIAS DE FOCO E ACESSIBILIDADE ======== */
+body.large-font {
+  --font-size-base: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 2.75rem;
+  --font-size-5xl: 3.5rem;
+}
 
-/* Estilos de foco visíveis */
+body.xlarge-font {
+  --font-size-base: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+}
+
+/* ======== MELHORIAS DE FOCO ======== */
 *:focus {
   outline: 2px solid var(--primary-yellow);
   outline-offset: 2px;
 }
 
-/* Foco personalizado para diferentes elementos */
 .menu a:focus {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
@@ -960,69 +1575,7 @@ body.high-contrast * {
   transform: scale(1.1);
 }
 
-/* Melhorar contraste para modo alto contraste */
-body.high-contrast *:focus {
-  outline: 3px solid #000000;
-  outline-offset: 3px;
-}
-
-body.high-contrast.dark-mode *:focus {
-  outline: 3px solid #ffffff;
-}
-
-/* Animações suaves para transições de foco */
-* {
-  transition: outline-color 0.2s ease, outline-offset 0.2s ease;
-}
-
-/* Indicador visual para elementos com foco */
-.focus-visible {
-  outline: 2px solid var(--primary-yellow) !important;
-  outline-offset: 2px !important;
-}
-
-/* ======== MELHORIAS DE NAVEGAÇÃO POR TECLADO ======== */
-
-/* Scroll suave para navegação por teclado */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Estilo para elementos quando recebem foco via teclado */
-.idolo-card:focus-visible {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(0, 151, 57, 0.3);
-}
-
-/* Feedback visual para navegação no menu */
-.menu a:focus-visible {
-  background: var(--primary-yellow);
-  color: var(--primary-blue);
-  transform: translateY(-2px);
-}
-
-/* ======== RESPONSIVIDADE PARA NAVEGAÇÃO ======== */
-@media (max-width: 768px) {
-  *:focus {
-    outline-width: 3px;
-    outline-offset: 1px;
-  }
-
-  .idolo-card:focus {
-    transform: translateY(-4px);
-  }
-}
-
-/* ======== ESTADOS DE FOCO PARA MODAL ======== */
-.modal.is-active .modal-content:focus {
-  outline: none;
-}
-
-.modal-card-head:focus-within {
-  box-shadow: 0 2px 10px rgba(255, 203, 0, 0.3);
-}
-
-/* ======== MELHORIAS DE ACESSIBILIDADE PARA TEXTO ======== */
+/* Redução de movimento */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -1033,35 +1586,10 @@ html {
   .carrossel-track {
     transition: none;
   }
-}
 
-/* Suporte para alto contraste do sistema */
-@media (prefers-contrast: high) {
-  :root {
-    --primary-blue: #000080;
-    --primary-green: #006400;
-    --primary-yellow: #ffff00;
-  }
-
-  .idolo-card {
-    border: 2px solid var(--black);
-  }
-}
-
-/* Suporte para modo escuro do sistema */
-@media (prefers-color-scheme: dark) {
-  body:not(.dark-mode):not(.light-mode) {
-    background: #121212;
-    color: #f5f5f5;
-  }
-
-  body:not(.dark-mode):not(.light-mode) .historia-section,
-  body:not(.dark-mode):not(.light-mode) .sobre-section {
-    background: #1e1e1e;
-  }
-
-  body:not(.dark-mode):not(.light-mode) .idolo-card {
-    background: #2d2d2d;
-    color: #f5f5f5;
+  .fade-in-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }
