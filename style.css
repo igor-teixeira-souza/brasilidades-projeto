@@ -238,12 +238,10 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    45deg,
-    rgba(0, 39, 118, 0.8),
-    rgba(0, 151, 57, 0.8)
-  );
-  opacity: 0.9;
+  background-image: url(/img/bandeira-do-brasil-simbolo-nacio.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.20;
 }
 
 .hero-content {
@@ -253,6 +251,7 @@ header h1 {
   color: var(--white);
   max-width: 800px;
   padding: 0 2rem;
+  width: 100%;
 }
 
 .hero-title {
@@ -301,7 +300,7 @@ header h1 {
 .historia-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -320,24 +319,18 @@ header h1 {
 }
 
 .historia-img {
-  height: 400px                                               ;
+  height: 500px;
   background-image: url(/img/brazil-flag-in-the-shape-of-a-he.png);
+  background-position: center;
+  background-size: cover;
+  background-clip: border-box;
+  background-repeat: no-repeat;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-}
-
-.historia-img,img {
-  width: 100%;
-  image-orientation: from-image;
-  background-position: center;
-  border-radius: var(--radius-lg);
 }
 
 .historia-img:hover {
@@ -383,12 +376,14 @@ header h1 {
 }
 
 .curiosidades-img {
-  height: 500px;
-  background: linear-gradient(
-    45deg,
-    var(--primary-green),
-    var(--primary-yellow)
-  );
+  height: 600px;
+  object-fit: cover;
+  background-image: url(/img/A\ ginga\ brasileira\ nos\ animes.png);
+  background-position: center;
+  background-size: cover;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
@@ -442,7 +437,7 @@ header h1 {
 
 .anime-card-header {
   position: relative;
-  height: 200px;
+  height: 500px;
   overflow: hidden;
   background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
   display: flex;
@@ -457,6 +452,7 @@ header h1 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  border-radius: none;
 }
 
 .anime-card:hover .anime-card-image {
@@ -787,7 +783,7 @@ header h1 {
 
 .idolo-card {
   flex: 0 0 380px;
-  height: 500px;
+  height: 550px;
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -990,17 +986,12 @@ header h1 {
 
 .sobre-img {
   height: 400px;
-  background: linear-gradient(
-    45deg,
-    var(--primary-yellow),
-    var(--primary-green)
-  );
+  background-image: url(/img/diversidade.png);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   font-size: 1.2rem;
   font-weight: 600;
@@ -1660,3 +1651,5 @@ body.xlarge-font {
     transform: none;
   }
 }
+
+
