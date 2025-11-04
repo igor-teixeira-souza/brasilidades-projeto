@@ -238,7 +238,7 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/img/bandeira-do-brasil-simbolo-nacio.png);
+  background-image: url(../img/bandeira-do-brasil-simbolo-nacio.png);
   background-position: center;
   background-size: cover;
   opacity: 0.20;
