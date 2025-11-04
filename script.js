@@ -13,7 +13,7 @@ const athleteDetails = {
 • 10 Campeonatos Paulistas
 • Maior artilheiro da história da Seleção Brasileira (77 gols)
 **Curiosidade:** Marcou 1.283 gols em sua carreira, reconhecido pelo Guinness World Records.`,
-    imageSrc: "/img/pele_b109b2f9f8.png",
+    imageSrc: "img/pele_b109b2f9f8.png",
     sport: "futebol",
   },
   Marta: {
@@ -27,7 +27,7 @@ const athleteDetails = {
 • 2 Medalhas de Prata Olímpicas (2004, 2008)
 • 3 Copas América Feminina
 **Curiosidade:** É Embaixadora Global da ONU Mulheres e inspiração para milhões de meninas no esporte.`,
-    imageSrc: "/img/marta.png.png",
+    imageSrc: "img/marta.png.png",
     sport: "futebol",
   },
   "Ayrton Senna": {
@@ -42,7 +42,7 @@ const athleteDetails = {
 • 65 Pole Positions
 • 6 Vitórias no GP de Mônaco (recorde)
 **Curiosidade:** Sua rivalidade com Alain Prost é lendária. Fundou o Instituto Ayrton Senna para educação infantil.`,
-    imageSrc: "/img/senna.png.png",
+    imageSrc: "img/senna.png.png",
     sport: "outros",
   },
   "Gabi Guimarães": {
@@ -56,7 +56,7 @@ const athleteDetails = {
 • 4 Campeonatos Sul-Americanos
 • MVP em diversas competições
 **Curiosidade:** É a capitã da Seleção Brasileira e ídolo do Minas Tênis Clube.`,
-    imageSrc: "/img/gabi.png.png",
+    imageSrc: "img/gabi.png.png",
     sport: "volei",
   },
   "Daniel Dias": {
@@ -70,7 +70,7 @@ const athleteDetails = {
 • 10 medalhas em Parapan-Americanos
 • Detentor de múltiplos recordes mundiais
 **Curiosidade:** Superou uma má-formação congênita para se tornar lenda do esporte paralímpico.`,
-    imageSrc: "/img/daniel-dias.png.jpg",
+    imageSrc: "img/daniel-dias.png.jpg",
     sport: "outros",
   },
   Giba: {
@@ -84,7 +84,7 @@ const athleteDetails = {
 • 9 Ligas Mundiais
 • 3 Copas dos Campeões
 **Curiosidade:** Superou um câncer na infância para se tornar um dos maiores atletas do vôlei mundial.`,
-    imageSrc: "/img/giba.png.png",
+    imageSrc: "img/giba.png.png",
     sport: "volei",
   },
   "Anderson Silva": {
@@ -98,7 +98,7 @@ const athleteDetails = {
 • 10 defesas de título consecutivas
 • Hall da Fama do UFC
 **Curiosidade:** Detém o recorde de maior sequência invicta na história do UFC.`,
-    imageSrc: "/img/anderson-silva.png.png",
+    imageSrc: "img/anderson-silva.png.png",
     sport: "outros",
   },
   "Isaquias Queiroz": {
@@ -112,7 +112,7 @@ const athleteDetails = {
 • 10 medalhas em Copas do Mundo
 • Tricampeão mundial
 **Curiosidade:** Primeiro brasileiro a conquistar 3 medalhas em uma mesma Olimpíada.`,
-    imageSrc: "/img/isaquias.png",
+    imageSrc: "img/isaquias.png",
     sport: "outros",
   },
   "Arthur Zanetti": {
@@ -126,7 +126,7 @@ const athleteDetails = {
 • 2 medalhas em Mundiais
 • 5 medalhas em Jogos Pan-Americanos
 **Curiosidade:** Especialista nas argolas, é conhecido por sua técnica impecável.`,
-    imageSrc: "/img/zanetti.png",
+    imageSrc: "img/zanetti.png",
     sport: "outros",
   },
   "Daiane dos Santos": {
@@ -140,7 +140,7 @@ const athleteDetails = {
 • 8 medalhas em Jogos Pan-Americanos
 • Criadora do movimento "Dos Santos"
 **Curiosidade:** Seu movimento "Dos Santos" foi o primeiro elemento ginástico batizado com o nome de uma atleta brasileira.`,
-    imageSrc: "/img/daiane.png",
+    imageSrc: "img/daiane.png",
     sport: "outros",
   },
   "Ronaldinho Gaúcho": {
@@ -154,7 +154,7 @@ const athleteDetails = {
 • Bola de Ouro (2005)
 • 2 vezes Melhor Jogador do Mundo pela FIFA
 **Curiosidade:** Famoso por seu estilo de jogo alegre e criativo, sempre com um sorriso no rosto.`,
-    imageSrc: "/img/ronaldinho.png",
+    imageSrc: "img/ronaldinho.png",
     sport: "futebol",
   },
   "Sheila Castro": {
@@ -168,7 +168,7 @@ const athleteDetails = {
 • 8 Ligas Mundiais
 • MVP do Grand Prix 2005
 **Curiosidade:** Conhecida por sua força nos ataques e liderança em quadra.`,
-    imageSrc: "/img/sheila.png",
+    imageSrc: "img/sheila.png",
     sport: "volei",
   },
   // NOVOS ATLETAS PARALÍMPICOS
@@ -183,7 +183,7 @@ const athleteDetails = {
 • 8 medalhas em Parapan-Americanos
 • Detentora de recordes mundiais
 **Curiosidade:** Com deficiência visual, é conhecida como "A Usain Bolt paralímpica" pela sua velocidade.`,
-    imageSrc: "/img/terezinha-guilhermina.png",
+    imageSrc: "img/terezinha-guilhermina.png",
     sport: "outros",
   },
   "Ádria Santos": {
@@ -196,7 +196,7 @@ const athleteDetails = {
 • 21 medalhas em Mundiais
 • 15 medalhas em Parapan-Americanos
 **Curiosidade:** Participou de 7 Paralimpíadas consecutivas (1988-2012), recorde brasileiro.`,
-    imageSrc: "/img/adria-santos.png",
+    imageSrc: "img/adria-santos.png",
     sport: "outros",
   },
   "Clodoaldo Silva": {
@@ -209,7 +209,7 @@ const athleteDetails = {
 • 25 medalhas em Mundiais
 • 15 medalhas em Parapan-Americanos
 **Curiosidade:** Foi o primeiro atleta brasileiro a conquistar 6 medalhas em uma mesma Paralimpíada (Atenas 2004).`,
-    imageSrc: "/img/clodoaldo-silva.png",
+    imageSrc: "img/clodoaldo-silva.png",
     sport: "outros",
   },
   "Shirlene Coelho": {
@@ -222,7 +222,7 @@ const athleteDetails = {
 • 3 medalhas em Mundiais (2 ouros, 1 prata)
 • Recordista mundial do lançamento de dardo
 **Curiosidade:** Antes do atletismo, foi jogadora de basquete em cadeira de rodas.`,
-    imageSrc: "/img/shirlene-coelho.png",
+    imageSrc: "img/shirlene-coelho.png",
     sport: "outros",
   },
   "Yeltsin Jacques": {
@@ -235,7 +235,7 @@ const athleteDetails = {
 • 3 medalhas em Mundiais (1 ouro, 2 pratas)
 • 4 medalhas em Parapan-Americanos
 **Curiosidade:** Foi eleito o melhor atleta paralímpico do mundo em 2021 pela World Para Athletics.`,
-    imageSrc: "/img/yeltsin-jacques.png",
+    imageSrc: "img/yeltsin-jacques.png",
     sport: "outros",
   },
   // OUTROS ÍDOLOS IMPORTANTES
@@ -251,7 +251,7 @@ const athleteDetails = {
 • 5 medalhas em Jogos Sul-Americanos
 • Hall da Fama da Natação Mundial
 **Curiosidade:** Aos 17 anos, foi a única mulher na delegação brasileira nos Jogos de 1932.`,
-    imageSrc: "/img/maria-lenk.png",
+    imageSrc: "img/aria-lenk.png",
     sport: "outros",
   },
   "Joaquim Cruz": {
@@ -265,7 +265,7 @@ const athleteDetails = {
 • Medalha de Bronze Mundial (1983)
 • Recordista mundial dos 800m (1984)
 **Curiosidade:** Sua vitória em Los Angeles 1984 quebrou hegemonia de 24 anos de atletas europeus e africanos.`,
-    imageSrc: "/img/joaquim-cruz.png",
+    imageSrc: "img/joaquim-cruz.png",
     sport: "outros",
   },
   "Torben Grael": {
@@ -279,7 +279,7 @@ const athleteDetails = {
 • 2 Copas América (2000, 2024)
 • Hall da Fama da Vela Internacional
 **Curiosidade:** Pertence à família Grael, a mais vitoriosa família da vela mundial.`,
-    imageSrc: "/img/torben-grael.png",
+    imageSrc: "img/torben-grael.png",
     sport: "outros",
   },
   "Robert Scheidt": {
@@ -292,7 +292,7 @@ const athleteDetails = {
 • 13 títulos mundiais
 • 8 vezes atleta do ano no Brasil
 **Curiosidade:** É o brasileiro com mais participações em Olimpíadas (7 edições).`,
-    imageSrc: "/img/robert-scheidt.png",
+    imageSrc: "img/robert-scheidt.png",
     sport: "outros",
   },
   "Hortência Marcari": {
@@ -306,7 +306,7 @@ const athleteDetails = {
 • Campeã Mundial (1994)
 • 3 vezes MVP do Campeonato Mundial
 **Curiosidade:** Conhecida como "A Rainha do Basquete Brasileiro", marcou 3.160 pontos pela seleção.`,
-    imageSrc: "/img/hortencia.png",
+    imageSrc: "img/hortencia.png",
     sport: "outros",
   },
   "Oscar Schmidt": {
@@ -320,7 +320,7 @@ const athleteDetails = {
 • 5 participações olímpicas
 • Hall da Fama do Basquete (FIBA e Naismith)
 **Curiosidade:** Recusou contrato milionário da NBA para manter-se elegível pela seleção brasileira.`,
-    imageSrc: "/img/oscar.png",
+    imageSrc: "img/oscar.png",
     sport: "outros",
   },
   "Reinaldo Colucci": {
@@ -334,7 +334,7 @@ const athleteDetails = {
 • 12 vitórias em etapas do Ironman
 • Representante olímpico brasileiro
 **Curiosidade:** É formado em medicina e combina a carreira esportiva com a profissão de médico.`,
-    imageSrc: "/img/colucci.png",
+    imageSrc: "img/colucci.png",
     sport: "outros",
   },
 };
